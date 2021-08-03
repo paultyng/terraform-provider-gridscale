@@ -9,7 +9,7 @@ import (
 )
 
 //Arrays can't be constants in Go, but these will be used as constants
-var hardwareProfiles = []string{"default", "legacy", "nested", "cisco_csr", "sophos_utm", "f5_bigip", "q35", "q35_nested"}
+var hardwareProfiles = []string{"default", "legacy", "nested", "cisco_csr", "sophos_utm", "f5_bigip", "q35"}
 var storageTypes = []string{"storage", "storage_high", "storage_insane"}
 var availabilityZones = []string{"a", "b", "c"}
 var loadbalancerAlgs = []string{"roundrobin", "leastconn"}
