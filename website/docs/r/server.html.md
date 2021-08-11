@@ -111,7 +111,7 @@ The following arguments are supported:
 
     * `object_uuid` - (Required) The object UUID or id of the network.
 
-    * `ordering` - (Optional) Defines the ordering of the network interfaces. Lower numbers have lower PCI-IDs.
+    * `ordering` - (Required) Defines the ordering of the network interfaces. Lower numbers have lower PCI-IDs.
 
     * `bootdevice` - (Optional, Computed) Make this network the boot device. This can only be set for one network.
 

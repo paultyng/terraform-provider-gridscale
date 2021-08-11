@@ -129,6 +129,7 @@ resource "gridscale_server" "foo" {
   ipv4 = gridscale_ipv4.foo.id
   network {
 		object_uuid = gridscale_network.foo.id
+		ordering = 0
 		rules_v4_in {
 				order = 0
 				protocol = "tcp"
@@ -178,6 +179,7 @@ resource "gridscale_server" "foo" {
   ipv4 = gridscale_ipv4.foo1.id
   network {
 		object_uuid = gridscale_network.foo.id
+		ordering = 0
 		rules_v4_in {
 				order = 0
 				protocol = "tcp"

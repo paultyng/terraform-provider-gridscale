@@ -133,7 +133,7 @@ func resourceGridscaleServer() *schema.Resource {
 			},
 
 			"network": {
-				Type:     schema.TypeList,
+				Type:     schema.TypeSet,
 				Optional: true,
 				MaxItems: 7,
 				Elem: &schema.Resource{
@@ -189,8 +189,7 @@ func resourceGridscaleServer() *schema.Resource {
 						},
 						"ordering": {
 							Type:     schema.TypeInt,
-							Optional: true,
-							Default:  0,
+							Required: true,
 						},
 						"create_time": {
 							Type:     schema.TypeString,
