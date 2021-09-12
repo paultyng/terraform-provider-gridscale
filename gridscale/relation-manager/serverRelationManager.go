@@ -213,22 +213,7 @@ func readCustomFirewallRules(netData map[string]interface{}) gsclient.FirewallRu
 func (c *ServerRelationManger) IsShutdownRequired(ctx context.Context) bool {
 	var shutdownRequired bool
 	d := c.getData()
-	//If the number of cores is decreased, shutdown the server
-	if d.HasChange("cores") {
-		old, new := d.GetChange("cores")
-		if new.(int) < old.(int) || d.Get("legacy").(bool) { //Legacy systems don't support updating the memory while running
-			shutdownRequired = true
-		}
-	}
-	//If the amount of memory is decreased, shutdown the server
-	if d.HasChange("memory") {
-		old, new := d.GetChange("memory")
-		if new.(int) < old.(int) || d.Get("legacy").(bool) { //Legacy systems don't support updating the memory while running
-			shutdownRequired = true
-		}
-	}
-	//If IP address, storages, or networks are changed, shutdown the server
-	if d.HasChange("ipv4") || d.HasChange("ipv6") || d.HasChange("storage") || d.HasChange("network") {
+	if d.HasChanges("cores", "memory", "ipv4", "ipv6", "storage", "network") {
 		shutdownRequired = true
 	}
 	return shutdownRequired
