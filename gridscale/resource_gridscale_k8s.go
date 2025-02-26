@@ -419,7 +419,7 @@ func deriveK8sTemplateFromResourceData(client *gsclient.Client, d *schema.Resour
 	release := releaseInterface.(string)
 
 	if !d.IsNewResource() { // case if update of resource is requested
-		if isVersionSet && d.HasChange("version") {
+		if isVersionSet && d.HasChange("gsk_version") {
 			derivationTypesRequested += 1
 			derivationType = "version"
 		}
